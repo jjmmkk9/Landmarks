@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    //@래퍼를 사용하면 현재 뷰의 모델 데이터를 읽을 수 있습니다.
     @Environment(ModelData.self) var modelData
+//    var modelData = ModelData() //@Environment없으니 안됨
     @State private var showFavoritesOnly = false
     
     var filteredLandmarks: [Landmark] {
