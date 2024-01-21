@@ -7,7 +7,10 @@
 
 import Foundation
 
-var landmarks : [Landmark] = load("landmarkData.json")
+@Observable 
+class ModelData{
+    var landmarks : [Landmark] = load("landmarkData.json")
+}
 
 // create a generic function : 매개변수 T 는 Decodable 해야함
 // 레이블 앞에 _를 추가하면 함수 호출 시 레이블을 생략할 수 있다. ex) load(filename: 4sdf) -> load(dgad)
