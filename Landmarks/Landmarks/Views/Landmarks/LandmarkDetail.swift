@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    //body 이전은 initializer 인가보다
+    @Environment(ModelData.self) var modelData
     var landmark : Landmark
+    
+    var landmarkIndex: Int {
+            modelData.landmarks.firstIndex(where: { $0.id == landmark.id })! //강제 언래핑(!)
+        }
+    
     var body: some View {
+        @Bindable var modelData = modelData
+        
         ScrollView {
             //You can use a stack to return multiple views from a body property.
             VStack {
@@ -19,9 +28,12 @@ struct LandmarkDetail: View {
                 CircleImage(image: landmark.image)
                     .offset(y:-130)
                     .padding(.bottom, -130)
-                VStack (alignment: .leading){
-                    Text(landmark.name)
-                        .font(.title)
+                VStack (alignment:.leading){
+                    HStack {
+                        Text(landmark.name)
+                            .font(.title)
+                        FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                    }
                     HStack{
                         Text(landmark.park)
                         
@@ -48,5 +60,7 @@ struct LandmarkDetail: View {
 }
 
 #Preview {
-    LandmarkDetail(landmark: ModelData().landmarks[0])
+    let modelData = ModelData()
+        return LandmarkDetail(landmark: modelData.landmarks[0])
+            .environment(modelData)
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-@Observable 
+//Observable 클래스 만들기 전에는 그냥 어디서든 landmarks를 들고 다녔음...-> 이제 동적으로 데이터를 수정해야돼서 그런가??
+@Observable
 class ModelData{
     var landmarks : [Landmark] = load("landmarkData.json")
 }
