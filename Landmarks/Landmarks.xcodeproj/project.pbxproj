@@ -23,6 +23,7 @@
 		BD32C1B32B5A54A300A9294A /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32C1B22B5A54A300A9294A /* LandmarkRow.swift */; };
 		BDC632F92B5A600B00CF0305 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC632F82B5A600B00CF0305 /* LandmarkList.swift */; };
 		BDC632FB2B5A629200CF0305 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC632FA2B5A629200CF0305 /* LandmarkDetail.swift */; };
+		BDE6CD0D2B5DFDB2002DB396 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6CD0C2B5DFDB2002DB396 /* HexagonParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		BD32C1B22B5A54A300A9294A /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		BDC632F82B5A600B00CF0305 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		BDC632FA2B5A629200CF0305 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		BDE6CD0C2B5DFDB2002DB396 /* HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				BDC632FA2B5A629200CF0305 /* LandmarkDetail.swift */,
 				BD32C1B22B5A54A300A9294A /* LandmarkRow.swift */,
 				BDC632F82B5A600B00CF0305 /* LandmarkList.swift */,
+				BDE6CD0C2B5DFDB2002DB396 /* HexagonParameters.swift */,
 			);
 			path = Landmarks;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				BD32C1A42B593EA700A9294A /* MapView.swift in Sources */,
 				BD32C1782B581CC200A9294A /* LandmarksApp.swift in Sources */,
 				39C8637A2B5CFD5900CD38F8 /* FavoriteButton.swift in Sources */,
+				BDE6CD0D2B5DFDB2002DB396 /* HexagonParameters.swift in Sources */,
 				BDC632F92B5A600B00CF0305 /* LandmarkList.swift in Sources */,
 				BDC632FB2B5A629200CF0305 /* LandmarkDetail.swift in Sources */,
 				BD32C1B32B5A54A300A9294A /* LandmarkRow.swift in Sources */,
