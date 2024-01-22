@@ -15,6 +15,7 @@ struct HexagonParameters{
         var curve : CGPoint
         var control : CGPoint
     }
+    //조정
     static let adjustment : CGFloat = 0.085
     
     static let segments = [
@@ -34,19 +35,19 @@ struct HexagonParameters{
             control: CGPoint(x: 0.00, y: 0.75 + adjustment)
         ),
         Segment(
-            line:    CGPoint(x: 0.40, y: 0.95),
-            curve:   CGPoint(x: 0.60, y: 0.95),
-            control: CGPoint(x: 0.50, y: 1.00)
+            line:    CGPoint(x: 0.40, y: 0.95 + adjustment),
+            curve:   CGPoint(x: 0.60, y: 0.95 + adjustment),
+            control: CGPoint(x: 0.50, y: 1.00 + adjustment)
         ),
         Segment(
-            line:    CGPoint(x: 0.95, y: 0.80),
-            curve:   CGPoint(x: 1.00, y: 0.70),
-            control: CGPoint(x: 1.00, y: 0.75)
+            line:    CGPoint(x: 0.95, y: 0.80 + adjustment),
+            curve:   CGPoint(x: 1.00, y: 0.70 + adjustment),
+            control: CGPoint(x: 1.00, y: 0.75 + adjustment)
         ),
         Segment(
-            line:    CGPoint(x: 1.00, y: 0.30),
-            curve:   CGPoint(x: 0.95, y: 0.20),
-            control: CGPoint(x: 1.00, y: 0.25)
+            line:    CGPoint(x: 1.00, y: 0.30 + adjustment),
+            curve:   CGPoint(x: 0.95, y: 0.20 + adjustment),
+            control: CGPoint(x: 1.00, y: 0.25 + adjustment)
         )
 ]
 }
