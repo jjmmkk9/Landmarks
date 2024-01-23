@@ -7,8 +7,10 @@ The elevation, heart rate, and pace of a hike plotted on a graph.
 import SwiftUI
 
 extension Animation{
-    static func ripple() -> Animation {
+    static func ripple(index : Int) -> Animation {
         Animation.spring(dampingFraction: 0.5)
+            .speed(2)
+            .delay(0.03 * Double(index))
     }
 }
 struct HikeGraph: View {
@@ -35,19 +37,19 @@ struct HikeGraph: View {
         let heightRatio = 1 - CGFloat(maxMagnitude / magnitude(of: overallRange))
 
         //GeometryReader는 부모 뷰의 공간에 대한 기하학적 정보를 자식 뷰에 제공하는 뷰 컨테이너
-        return GeometryReader { proxy in
-            HStack(alignment: .bottom, spacing: proxy.size.width / 120) {
+        return GeometryReader { geometry in
+            HStack(alignment: .bottom, spacing: geometry.size.width / 120) {
                 ForEach(Array(data.enumerated()), id: \.offset) { index, observation in
                     GraphCapsule(
                         index: index,
                         color: color,
-                        height: proxy.size.height,
+                        height: geometry.size.height,
                         range: observation[keyPath: path],
                         overallRange: overallRange
                     )
-                    .animation(.ripple())
+                    .animation(.ripple(index: index))
                 }
-                .offset(x: 0, y: proxy.size.height * heightRatio)
+                .offset(x: 0, y: geometry.size.height * heightRatio)
             }
         }
     }
@@ -66,7 +68,7 @@ func magnitude(of range: Range<Double>) -> Double {
 }
 
 #Preview {
-    let hike = ModelData().hikes[0]
+    let hike = hikes[0]
     return Group {
         HikeGraph(hike: hike, path: \.elevation)
             .frame(height: 200)
