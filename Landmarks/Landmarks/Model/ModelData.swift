@@ -11,6 +11,7 @@ import Foundation
 @Observable
 class ModelData{
     var landmarks : [Landmark] = load("landmarkData.json")
+    var hikes : [Hike] = load("hikeData.json")
 }
 
 // create a generic function : 매개변수 T 는 Decodable 해야함
