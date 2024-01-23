@@ -4,9 +4,13 @@ See the LICENSE.txt file for this sample’s licensing information.
 Abstract:
 The elevation, heart rate, and pace of a hike plotted on a graph.
 */
-
 import SwiftUI
 
+extension Animation{
+    static func ripple() -> Animation {
+        Animation.spring(dampingFraction: 0.5)
+    }
+}
 struct HikeGraph: View {
     var hike: Hike
     var path: KeyPath<Hike.Observation, Range<Double>>
@@ -30,6 +34,7 @@ struct HikeGraph: View {
         let maxMagnitude = data.map { magnitude(of: $0[keyPath: path]) }.max()!
         let heightRatio = 1 - CGFloat(maxMagnitude / magnitude(of: overallRange))
 
+        //GeometryReader는 부모 뷰의 공간에 대한 기하학적 정보를 자식 뷰에 제공하는 뷰 컨테이너
         return GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: proxy.size.width / 120) {
                 ForEach(Array(data.enumerated()), id: \.offset) { index, observation in
@@ -40,6 +45,7 @@ struct HikeGraph: View {
                         range: observation[keyPath: path],
                         overallRange: overallRange
                     )
+                    .animation(.ripple())
                 }
                 .offset(x: 0, y: proxy.size.height * heightRatio)
             }

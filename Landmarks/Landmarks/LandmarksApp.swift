@@ -18,7 +18,7 @@ struct LandmarksApp: App {
         //body요소는 하나 이상의 Scene를 반환한다.
         WindowGroup {
             ContentView()
-                .environment(modelData)
+                
         }
     }
 }
