@@ -9,7 +9,8 @@ import SwiftUI
 
 extension AnyTransition{
     static var moveAndFade: AnyTransition {
-        AnyTransition.move(edge: .leading)
+        //비대칭 -주입할때: 끝에서 들어오기 -사라질때: 위로 날라감
+        AnyTransition.asymmetric(insertion: .move(edge: .trailing), removal: .scale.combined(with: move(edge: .top)))
     }
 }
 
