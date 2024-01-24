@@ -12,6 +12,18 @@ import Foundation
 class ModelData{
     var landmarks : [Landmark] = load("landmarkData.json")
     var hikes : [Hike] = load("hikeData.json")
+    
+    var features : [Landmark]{
+        landmarks.filter{$0.isFeatured}
+    }
+    
+    //딕셔너리 타입으로 선언 ["lakes" : [landmark1, landmark2], "rivers" : [landmark3, landmark4]]
+    var categories : [String: [Landmark]]{
+        Dictionary(
+            //landmarks를 그루핑할건데 .category.rawValue 를 기준으로 해라
+            grouping: landmarks, by: {$0.category.rawValue}
+        )
+    }
 }
 
 // create a generic function : 매개변수 T 는 Decodable 해야함

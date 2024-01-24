@@ -19,6 +19,17 @@ struct Landmark: Hashable, Codable, Identifiable {
     var park : String
     var description : String
     var isFavorite : Bool
+    var isFeatured : Bool
+    
+    var category : Category
+    //category와 같이 유형이 몇가지로 정해져 있는건 enum으로 정의해놓고 rawValue로 가져와버리기
+    enum Category : String, CaseIterable, Codable{
+        case lakes = "Lakes" //rawValue
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+        case mungis = "Mungis"
+    }
+    
     
     private var imageName : String //image로 변환할때만 쓰이기 때문에 private
     var image : Image {
