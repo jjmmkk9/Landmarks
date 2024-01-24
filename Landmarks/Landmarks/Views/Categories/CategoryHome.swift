@@ -1,0 +1,37 @@
+//
+//  CategoryHome.swift
+//  Landmarks
+//
+//  Created by 비긴어브랜드 on 1/24/24.
+//
+
+import SwiftUI
+
+struct CategoryHome: View {
+    @Environment(ModelData.self) var modelData
+    
+    var body: some View {
+        NavigationSplitView{
+            List{
+                modelData.features[0].image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+                    .listRowInsets(EdgeInsets())
+                ForEach(modelData.categories.keys.sorted(), id: \.self){key in
+                    CategoryRow(categoryName: key, items: modelData.categories[key]!)//categories에서 key인거 가져와서 unwrap!
+                }
+                .listRowInsets(EdgeInsets())
+            }
+                .navigationTitle("Featured")
+        }detail: {
+            Text("Select a LAndmark")
+        }
+    }
+}
+
+#Preview {
+    CategoryHome()
+        .environment(ModelData())
+}

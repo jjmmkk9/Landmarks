@@ -68,7 +68,7 @@ func magnitude(of range: Range<Double>) -> Double {
 }
 
 #Preview {
-    let hike = hikes[0]
+    let hike = ModelData().hikes[0]
     return Group {
         HikeGraph(hike: hike, path: \.elevation)
             .frame(height: 200)
