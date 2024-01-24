@@ -12,6 +12,7 @@ import Foundation
 class ModelData{
     var landmarks : [Landmark] = load("landmarkData.json")
     var hikes : [Hike] = load("hikeData.json")
+    var profile = Profile.default // editMode로 편집하기 위해 Observable로 관리
     
     var features : [Landmark]{
         landmarks.filter{$0.isFeatured}
