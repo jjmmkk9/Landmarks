@@ -35,6 +35,11 @@ struct Landmark: Hashable, Codable, Identifiable {
     var image : Image {
         Image(imageName)
     }
+    
+    var featureImage: Image? {
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
+    
     private var coordinates : Coordinates //LocationCoordinate로 변환할때만 쓰이기 때문에 private
 
     var LocationCoordinate : CLLocationCoordinate2D {
