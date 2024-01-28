@@ -29,6 +29,8 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             navigationOrientation: .horizontal)
 
         pageViewController.dataSource = context.coordinator
+        pageViewController.delegate = context.coordinator
+        
         return pageViewController
     }
     
@@ -37,12 +39,12 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
         pageViewController.setViewControllers(
             //컨트롤러에 swiftui 뷰를 삽입하는 방법 - setViewControllers
-            [context.coordinator.controllers[0]], direction: .forward, animated: true)
+            [context.coordinator.controllers[currentPage]], direction: .forward, animated: true)
         
     }
 
     //Coordinator는 UIKit과 SwiftUI 간의 통신을 돕기 위한 클래스입니다.
-    class Coordinator: NSObject, UIPageViewControllerDataSource {
+    class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
         var parent: PageViewController
         
         var controllers = [UIViewController]() // UIViewController 담는 빈 배열 생성!
@@ -80,7 +82,16 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
                 }
                 return controllers[index + 1]// index + 1
             }
-    
+        
+        //페이지 넘김 애니메이션이 끝나고 호출됨
+        func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            if completed,
+               let visibleViewController = pageViewController.viewControllers?.first,
+               let index = controllers.firstIndex(of: visibleViewController){
+                //currentPage에 index를 바인딩으로 넘겨준다
+                parent.currentPage = index
+            }
+        }
     }
     
 }
