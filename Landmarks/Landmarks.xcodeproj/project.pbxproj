@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39071E2C2B62AAC100D4CADE /* EditableNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39071E2B2B62AAC100D4CADE /* EditableNameView.swift */; };
+		390CF1A02B663459008B01EB /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390CF19F2B663459008B01EB /* PageControl.swift */; };
 		39C8637A2B5CFD5900CD38F8 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C863792B5CFD5900CD38F8 /* FavoriteButton.swift */; };
 		39C8637E2B5EAB8400CD38F8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8637D2B5EAB8400CD38F8 /* Profile.swift */; };
 		39C863802B5EAD8100CD38F8 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8637F2B5EAD8100CD38F8 /* ProfileHost.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		39071E2B2B62AAC100D4CADE /* EditableNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableNameView.swift; sourceTree = "<group>"; };
+		390CF19F2B663459008B01EB /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		39C863792B5CFD5900CD38F8 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		39C8637D2B5EAB8400CD38F8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		39C8637F2B5EAD8100CD38F8 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				BDCCAE252B63431900FD4A27 /* PageViewController.swift */,
 				BDCCAE292B63541A00FD4A27 /* PageView.swift */,
+				390CF19F2B663459008B01EB /* PageControl.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				BD32C1782B581CC200A9294A /* LandmarksApp.swift in Sources */,
 				39C863942B5FEFE000CD38F8 /* HikeDetail.swift in Sources */,
 				39C8637A2B5CFD5900CD38F8 /* FavoriteButton.swift in Sources */,
+				390CF1A02B663459008B01EB /* PageControl.swift in Sources */,
 				BDCCAE262B63431900FD4A27 /* PageViewController.swift in Sources */,
 				BDE6CD0D2B5DFDB2002DB396 /* HexagonParameters.swift in Sources */,
 				BDD3DBC02B5E5E440041C0AC /* RotatedBadgeSymbol.swift in Sources */,
