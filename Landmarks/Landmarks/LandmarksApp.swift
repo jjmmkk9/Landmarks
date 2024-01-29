@@ -16,10 +16,15 @@ struct LandmarksApp: App {
     @State private var modelData = ModelData()
     var body: some Scene {
         //body요소는 하나 이상의 Scene를 반환한다.
+        
         WindowGroup {
             ContentView()
                 .environment(modelData)
-                
         }
+        
+        //조건부 컴파일하는 법
+        #if os(watchOS)
+        WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
+        #endif
     }
 }
